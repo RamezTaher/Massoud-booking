@@ -1,0 +1,109 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+:host {
+  .filter {
+    padding-bottom: 85px;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    @include respond(desktop) {
+      padding-bottom: 0;
+    }
+
+    &__header {
+      padding: 2.1rem 3.7rem;
+      margin-bottom: 3.2rem;
+      border-bottom: 1px solid $color-secondary-shade;
+      position: relative;
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+
+    &__closeBtn {
+      position: absolute;
+      left: 3.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__heading {
+      display: none;
+      @include respond(desktop) {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    &__selection {
+      margin: 1.6rem 0 3.2rem 0;
+      @include respond(desktop) {
+        margin: 0.7rem 0 3.2rem 0;
+      }
+    }
+
+    &__boxes {
+      column-gap: 0.9rem;
+      @include respond(desktop) {
+        column-gap: 0.5rem;
+      }
+    }
+
+    &__box {
+      width: 5rem;
+      height: 4.2rem;
+      color: $color-primary;
+      border: 0.5px solid $color-primary;
+      border-radius: 0.5rem;
+      background-color: $color-primary-tint;
+      font-size: $font-size-10;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.2rem;
+      @include respond(desktop) {
+        width: 4.2rem;
+      }
+      &.clicked {
+        color: $color-secondary-tint;
+        background-color: $color-primary;
+      }
+    }
+
+    &__choices {
+      padding: 0 3.7rem;
+      @include respond(desktop) {
+        padding: 30px 70px 10px 5px;
+      }
+    }
+
+    &__cta {
+      padding-top: 2.1rem;
+      padding-bottom: 2.1rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $color-secondary-tint;
+      @include shadow-2;
+
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  .form-control {
+    display: flex;
+    align-items: center;
+
+    .label {
+      @include respond(desktop) {
+        font-size: $font-size-12;
+        font-weight: 500;
+        line-height: 2.3rem;
+      }
+    }
+  }
+}

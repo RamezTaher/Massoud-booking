@@ -1,0 +1,26 @@
+.carousal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  overflow-x: scroll;
+  gap: 20px;
+  padding: 20px 0;
+  &-container {
+    margin-top: 10rem;
+    row-gap: 1.6rem;
+  }
+  &-item {
+    flex: 0 0 99%;
+    height: 100%;
+    @include respond(desktop) {
+      flex: 0 0 33%;
+    }
+  }
+
+  &-btns-container {
+    display: none;
+    @include respond(desktop) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+
+/* Importing Datepicker SCSS file. */
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "./assets/styles/components/date-picker";
+.app-messages {
+  font-size: 12px;
+  text-align: right;
+  margin-top: 8px;
+  margin-right: 30px;
+  &.error {
+    color: red;
+  }
+  &.success {
+    color: green;
+  }
+}

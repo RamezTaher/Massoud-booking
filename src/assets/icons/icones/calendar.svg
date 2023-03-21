@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="16.5" viewBox="0 0 15 16.5">
+  <g id="calendar" transform="translate(-2.25 -1.25)">
+    <path id="Rectangle_3" data-name="Rectangle 3" d="M2-.75h9.5A2.753,2.753,0,0,1,14.25,2v9a2.753,2.753,0,0,1-2.75,2.75H2A2.753,2.753,0,0,1-.75,11V2A2.753,2.753,0,0,1,2-.75Zm9.5,13A1.251,1.251,0,0,0,12.75,11V2A1.251,1.251,0,0,0,11.5.75H2A1.251,1.251,0,0,0,.75,2v9A1.251,1.251,0,0,0,2,12.25Z" transform="translate(3 4)" fill="#17a288"/>
+    <path id="Line_2" data-name="Line 2" d="M0,4.75A.75.75,0,0,1-.75,4V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V4A.75.75,0,0,1,0,4.75Z" transform="translate(12.75 2)" fill="#17a288"/>
+    <path id="Line_3" data-name="Line 3" d="M0,4.75A.75.75,0,0,1-.75,4V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V4A.75.75,0,0,1,0,4.75Z" transform="translate(6.75 2)" fill="#17a288"/>
+    <path id="Line_4" data-name="Line 4" d="M13.5.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H13.5a.75.75,0,0,1,.75.75A.75.75,0,0,1,13.5.75Z" transform="translate(3 8)" fill="#17a288"/>
+  </g>
+</svg>

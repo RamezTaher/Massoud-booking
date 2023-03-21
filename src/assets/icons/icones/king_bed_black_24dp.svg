@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <g id="king_bed_black_24dp" transform="translate(0)">
+    <g id="Group_1" data-name="Group 1" transform="translate(0.5)">
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="14" height="14" transform="translate(-0.5)" fill="none"/>
+      <rect id="Rectangle_7" data-name="Rectangle 7" width="14" height="14" transform="translate(-0.5)" fill="none"/>
+    </g>
+    <g id="Group_3" data-name="Group 3" transform="translate(1.255 2.917)">
+      <g id="Group_2" data-name="Group 2">
+        <rect id="Rectangle_8" data-name="Rectangle 8" width="2" height="2" transform="translate(2.745 1.083)" fill="none"/>
+        <rect id="Rectangle_9" data-name="Rectangle 9" width="2" height="2" transform="translate(6.745 1.083)" fill="none"/>
+        <path id="Path_7" data-name="Path 7" d="M12.5,7.917V6.167A1.17,1.17,0,0,0,11.333,5h-7A1.17,1.17,0,0,0,3.167,6.167v1.75A1.17,1.17,0,0,0,2,9.083V12h.776l.3.893a.409.409,0,0,0,.385.274h0a.409.409,0,0,0,.385-.274l.3-.893h7.391l.3.893a.4.4,0,0,0,.379.274h0a.409.409,0,0,0,.385-.274l.3-.893h.776V9.083A1.17,1.17,0,0,0,12.5,7.917Zm-5.25,0H4.333V6.75a.585.585,0,0,1,.583-.583H7.25Zm4.083,0H8.417V6.167H10.75a.585.585,0,0,1,.583.583Z" transform="translate(-2 -5)" fill="#979797"/>
+      </g>
+    </g>
+  </g>
+</svg>

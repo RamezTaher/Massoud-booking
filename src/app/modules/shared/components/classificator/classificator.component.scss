@@ -1,0 +1,54 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+:host {
+  .classificator {
+    height: 100%;
+
+    &__card {
+      background-color: $color-secondary-tint;
+      height: 23rem;
+      padding: bottom 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+    &__header {
+      padding: 1.5rem 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid $color-secondary-shade;
+      position: relative;
+
+      border-top-left-radius: 5rem;
+      border-top-right-radius: 5rem;
+    }
+    &__closeBtn {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__content {
+      row-gap: 1rem;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-secondary-shade;
+      }
+      &.active > img {
+        display: block;
+      }
+    }
+    &__bg {
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 9;
+    }
+  }
+}

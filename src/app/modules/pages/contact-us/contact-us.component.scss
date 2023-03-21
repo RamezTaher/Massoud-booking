@@ -1,0 +1,67 @@
+@import "utilities/mixins";
+@import "utilities/variables";
+
+:host {
+  .contact {
+    padding-top: 8rem;
+    min-height: calc(100vh - 8rem);
+
+    .main-container {
+      padding-top: 3.2rem;
+      padding-bottom: 6.4rem;
+
+      @include respond(desktop) {
+        padding-top: 5rem;
+        padding-bottom: 20rem;
+      }
+    }
+
+    &__container {
+      row-gap: 3.2rem;
+      @include respond(desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &__infos {
+      row-gap: 3.2rem;
+    }
+
+    &__address {
+      row-gap: 1.6rem;
+    }
+
+    li {
+      & > img {
+        height: 1.6rem;
+        width: 1.4rem;
+        margin-left: 1.7rem;
+      }
+    }
+
+    &__social {
+      row-gap: 1.6rem;
+    }
+
+    &__social-media-box {
+      column-gap: 1.6rem;
+      .social-logo {
+        height: 3rem;
+        width: 3rem;
+        cursor: pointer;
+      }
+    }
+
+    &__img {
+      @include respond(desktop) {
+        margin: 0;
+        width: 55%;
+      }
+    }
+
+    &__img--big {
+      width: 100%;
+    }
+  }
+}

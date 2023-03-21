@@ -1,0 +1,20 @@
+.main-container {
+  padding: 0 3.7rem;
+  @include respond(desktop) {
+    padding: 0 70px;
+  }
+}
+
+.secondary-container {
+  padding: 1.5rem 1rem;
+  @include respond(desktop) {
+    padding: 1rem 3rem 1rem 0;
+  }
+}
+
+.tritiary-container {
+  padding: 1.5rem;
+  @include respond(desktop) {
+    padding: 1.6rem;
+  }
+}

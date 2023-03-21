@@ -1,0 +1,14 @@
+.logo {
+  width: 9rem;
+  height: 4.1rem;
+}
+
+.social-logo {
+  height: 4.1rem;
+  width: 4.1rem;
+
+  @include respond(desktop) {
+    height: 3rem;
+    width: 3rem;
+  }
+}

@@ -1,0 +1,177 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+:host {
+  .home {
+    padding-top: 8.3rem;
+    margin-top: 3rem;
+
+    &__choice {
+      border-radius: 2rem;
+      @include shadow-1;
+    }
+  }
+}
+
+/*  */
+
+.choose {
+  margin-top: 1.2rem;
+  .home-heading-primary {
+    max-width: 23rem;
+    @include respond(desktop) {
+      max-width: auto;
+    }
+  }
+  @include respond(desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 8rem;
+    margin-top: 6rem;
+  }
+  &-img {
+    width: 100%;
+
+    @include respond(desktop) {
+      width: 50%;
+    }
+  }
+}
+
+.about {
+  padding: 3.7rem;
+  background-color: $color-secondary;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+
+  @include respond(desktop) {
+    flex-direction: row;
+    padding: 6.4rem 13.9rem 6.4rem 3.8rem;
+    margin-bottom: 6.5rem;
+  }
+
+  &__details {
+    &--titles {
+      margin-bottom: 3rem;
+      @include respond(desktop) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    &--numbers {
+      margin-bottom: 3rem;
+      @include respond(desktop) {
+        width: 60%;
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+
+  &__directions {
+    column-gap: 4.1rem;
+    @include respond(desktop) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &--list {
+      flex: 1;
+      @include respond(desktop) {
+        display: flex;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--item {
+      &::before {
+        content: "\2022";
+        color: $color-primary;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: 0.6rem;
+      }
+
+      @include respond(desktop) {
+        flex: 1;
+      }
+    }
+  }
+
+  .details,
+  .img-container {
+    @include respond(desktop) {
+      flex: 1;
+    }
+  }
+
+  .img-container {
+    width: 100%;
+  }
+}
+
+.mail {
+  margin: 50px 0;
+
+  &__card {
+    @include shadow-2;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    @include respond(desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 3.2rem;
+    }
+  }
+
+  &__details {
+    margin-bottom: 3rem;
+    column-gap: 1.4rem;
+    @include respond(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  .form {
+    @include respond(desktop) {
+      width: 40%;
+    }
+  }
+
+  .input-container {
+    @include respond(desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 1.3rem;
+      border: 1px solid $color-secondary-shade;
+    }
+  }
+
+  .primary-input {
+    margin-bottom: 1.5rem;
+    @include respond(desktop) {
+      border: 0;
+      margin-bottom: 0;
+      padding-right: 1.5rem;
+    }
+
+    &-img {
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  .img-container {
+    margin-left: 1.4rem;
+  }
+
+  &__btn {
+    @include respond(desktop) {
+      width: 45%;
+    }
+  }
+}

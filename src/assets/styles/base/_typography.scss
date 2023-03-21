@@ -1,0 +1,441 @@
+.primary {
+  color: $color-primary !important;
+}
+
+.white {
+  color: $color-secondary-tint !important;
+}
+
+/*  HEADER  */
+
+.header-heading {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 37px;
+  color: $color-dark;
+  @include respond(desktop) {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+/*  HOME  */
+
+.home {
+  &-big-heading {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 75px;
+    color: $color-dark;
+    // color: $color-dark-tint;
+    @include respond(desktop) {
+      font-size: 60px;
+      line-height: 100px;
+    }
+  }
+
+  &-main-heading {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+
+    color: $color-dark;
+    @include respond(desktop) {
+      font-size: 24px;
+      line-height: 45px;
+    }
+  }
+
+  &-heading {
+    &-1 {
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: normal;
+      color: $color-dark;
+      @include respond(desktop) {
+        font-size: 24px;
+        line-height: 37px;
+        font-weight: 500;
+        color: $color-dark;
+      }
+    }
+
+    &-2 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 30px;
+      color: $color-dark-shade;
+      @include respond(desktop) {
+        font-size: 20px;
+        line-height: 37px;
+        font-weight: 500;
+      }
+    }
+
+    &-3 {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 26px;
+      color: $color-dark;
+      @include respond(desktop) {
+        font-size: 24px;
+        line-height: 45px;
+      }
+    }
+    &-4 {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 30px;
+      color: $color-dark-shade;
+      @include respond(desktop) {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+/*  PICKER  */
+.picker {
+  &-1 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color-dark-shade;
+    @include respond(desktop) {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 30px;
+    }
+  }
+  &-2 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+    color: $color-dark;
+    @include respond(desktop) {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 37px;
+    }
+  }
+}
+/*  FILTER CLASS DIRECTIONS  */
+.pop {
+  &-big-heading {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 37px;
+    color: $color-dark;
+  }
+
+  &-main-heading {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 17px;
+    color: $color-dark;
+  }
+
+  &-heading {
+    &-1 {
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 23px;
+      color: $color-dark;
+    }
+    &-2 {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 23px;
+      color: $color-dark;
+    }
+    &-3 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 30px;
+      color: $color-dark;
+    }
+  }
+}
+
+/*   HOTEL ITEM   */
+.hotel-item {
+  &-name {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: $color-dark;
+  }
+  &-location {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color-dark-shade;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+  &-price {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    color: $color-warning;
+  }
+
+  &-period {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 19px;
+    color: $color-dark;
+  }
+
+  &-type-date {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color-dark-shade;
+  }
+
+  &-sum {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 19px;
+    // color: $color-dark-tint;
+  }
+
+  &-room-type {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+  &-room-service {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 26px;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 23px;
+    }
+  }
+}
+
+/*  FILTER CLASS  */
+.filter {
+  &-big-heading {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 37px;
+    color: $color-dark;
+  }
+  &-main-heading {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 17px;
+    color: $color-dark;
+  }
+  &-heading {
+    &-1 {
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 23px;
+      color: $color-dark;
+    }
+    &-2 {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 23px;
+      color: $color-dark;
+    }
+
+    &-3 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 30px;
+      color: $color-dark;
+    }
+  }
+}
+
+/*  CONTACT US   */
+
+.contact {
+  &-big-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 7.5rem;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 6rem;
+      line-height: 10rem;
+    }
+  }
+
+  &-heading {
+    &-1 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      line-height: 3rem;
+    }
+
+    &-2 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      line-height: 45px;
+      color: $color-dark;
+    }
+
+    &-3 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $color-dark-shade;
+      line-height: 3.7rem;
+    }
+  }
+}
+
+/*DETAILS*/
+
+.details {
+  &-main-heading {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+  &-heading-1 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color-dark;
+  }
+  &-heading-2 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 23px;
+    color: $color-dark;
+  }
+
+  &-text-1 {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color: $color-dark;
+  }
+
+  &-item {
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+}
+
+/* BOOKING */
+
+.book {
+  &-main-heading {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: $color-dark;
+  }
+  &-heading-1 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $color-dark;
+  }
+  &-heading-2 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $color-dark-shade;
+  }
+  &-heading-3 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 26px;
+    color: $color-dark-shade;
+  }
+  &-heading-4 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $color-dark;
+  }
+  &-sum {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 37px;
+    color: $color-dark;
+  }
+  &-danger {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 19px;
+    color: $color-danger;
+  }
+  &-done {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 20px;
+    }
+  }
+}
+
+/*  AUTH  */
+.auth {
+  &-main-heading {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    color: $color-dark;
+  }
+  &-heading-1 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 17px;
+    color: $color-dark;
+  }
+  &-heading-2 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $color-dark;
+    @include respond(xl) {
+      font-size: 12px;
+      line-height: 23px;
+    }
+  }
+  &-text {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 19px;
+    color: $color-dark;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  &-heading {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+}

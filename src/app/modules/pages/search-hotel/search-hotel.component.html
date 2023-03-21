@@ -1,0 +1,135 @@
+<div class="search">
+  <!-- SEARCH CARD -->
+  <div class="choice">
+    <div class="main-container" (click)="isChoiceOpen = true">
+      <div class="choice__mob flex items-center">
+        <i class="choice__img icon-search" alt="search"></i>
+        <div class="choice__mob--details">
+          <h4 class="choice__text-1">{{ this.currentDirection?.text }}</h4>
+          <div class="choice__mob--date">
+            <h4 class="choice__text-2">
+              <div>
+                {{ currentCheckIn | date: "LLLL dd" }}
+              </div>
+
+              <div>
+                {{ currentCheckOut | date: "LLLL dd" }}
+              </div>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POP UP DATE + CODE -->
+
+    <div *ngIf="isChoiceOpen" class="choice-mobile">
+      <div class="choice-mobile-bg">
+        <div class="choice-mobile-container">
+          <app-choice-card
+            [queries]="getQueriesObject()"
+            (search)="search($event)"
+          ></app-choice-card>
+        </div>
+      </div>
+    </div>
+    <div class="choice-desktop">
+      <app-choice-card
+        [queries]="getQueriesObject()"
+        (search)="search($event)"
+      ></app-choice-card>
+    </div>
+    <div *ngIf="isChoiceOpen" class="choice__bg" (click)="isChoiceOpen = false">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- CTA JUST 4 MOBILE -->
+
+    <div class="search__btns">
+      <button class="btn btn-primary-tint btn-sm" (click)="isFilterOpen = true">
+        <img src="assets/icons/icones/filter.svg" alt="filter" />
+        {{ "SEARCH.FILTER" | translate }}
+      </button>
+
+      <button class="btn btn-primary-tint btn-sm" (click)="isClassOpen = true">
+        {{ "SEARCH.CLASS" | translate }}
+      </button>
+    </div>
+  </div>
+
+  <!-- SORT BY -->
+  <div class="class-desktop" *ngIf="isClassOpen">
+    <app-classificator
+      (closeClassificator)="isClassOpen = false"
+    ></app-classificator>
+  </div>
+
+  <!-- HOTELS + FILTER -->
+
+  <div class="search__hotel-container">
+    <!-- FILTER -->
+
+    <div class="search__hotels-filter">
+      <div class="filter-mobile" *ngIf="isFilterOpen">
+        <app-filter (closeFilter)="isFilterOpen = false"></app-filter>
+      </div>
+      <div class="filter-desktop">
+        <app-filter></app-filter>
+      </div>
+    </div>
+
+    <!-- HOTELS -->
+
+    <div class="search__hotels-all">
+      <div class="search__hotel-header--container">
+        <div class="search__hotel-header flex items-center justify-between">
+          <h2 class="search-details-desktop-heading filter-main-heading">
+            {{ (this.hotelsService.state$ | async)?.data?.Data?.length }}
+            {{ "SEARCH.HOTELSAVAILABLE" | translate }}
+          </h2>
+          <div
+            (click)="desktopFilter = !desktopFilter"
+            class="search__hotel-header--filter filter-main-heading"
+          >
+            <span>{{ "SEARCH.CLASS" | translate }}</span>
+            <span class="primary"> {{ deskFilter }}</span>
+            <i class="icon-arrow_drop_down_black_24dp"></i>
+          </div>
+        </div>
+
+        <div class="search__hotel-header--class" *ngIf="desktopFilter">
+          <div class="search__hotel-header--class-content flex flex-col">
+            <li
+              class="search__hotel-header--class-item"
+              *ngFor="let item of items; let i = index"
+              [ngClass]="{ active: activeClass === i }"
+              [value]="item.value"
+              (click)="
+                activeClass = i; deskFilter = item.value; desktopFilter = false
+              "
+            >
+              {{ item.value }}
+            </li>
+          </div>
+        </div>
+      </div>
+      <app-card-loader
+        *ngIf="(hotelsService.state$ | async)?.loading"
+      ></app-card-loader>
+      <ng-container *ngIf="!(hotelsService.state$ | async)?.loading">
+        <div class="search__hotels flex flex-col justify-between">
+          <div
+            *ngFor="let item of (this.hotelsService.state$ | async)?.data?.Data"
+            class="search__hotel"
+          >
+            <app-hotel-card [data]="item"></app-hotel-card>
+          </div>
+        </div>
+
+        
+      </ng-container>
+    </div>
+  </div>
+</div>

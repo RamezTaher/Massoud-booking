@@ -1,0 +1,157 @@
+<header class="header">
+  <div class="main-container flex items-center justify-center">
+    <div [routerLink]="['/home']" class="header__logo">
+      <img src="assets/imgs/logo.png" alt="Booking__logo" class="logo" />
+    </div>
+
+    <div class="nav-mob main-container" [ngClass]="isMobile ? 'display' : ''">
+      <ng-container *ngIf="!storageService.isLogged()">
+        <div class="cta flex flex-col items-center u-margin-bottom-10">
+          <button
+            routerLink="./signup"
+            class="btn btn-primary btn-sm"
+            (click)="signinService.close(); isMobile = false"
+          >
+            {{ "HEADER.SIGNUP" | translate }}
+          </button>
+          <button
+            class="btn btn-secondary-tint btn-sm"
+            (click)="signinService.open(); isMobile = false"
+          >
+            {{ "HEADER.SIGNIN" | translate }}
+          </button>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="storageService.isLogged()">
+        <div class="cta-logged flex items-center">
+          <img src="assets/imgs/user.svg" alt="logo" />
+
+          <div>
+            {{ storageService.user.FirstName }}
+            {{ storageService.user.LastName }}
+          </div>
+        </div>
+      </ng-container>
+
+      <nav class="nav">
+        <ul class="nav__list flex flex-col">
+          <li class="nav__item" (click)="signinService.close()">
+            <a
+              routerLink="/home"
+              routerLinkActive="active"
+              class="nav__link"
+              (click)="isMobile = false"
+            >
+              <i class="icon-home_black_24dp nav__icon"></i>
+
+              {{ "HEADER.HOME" | translate }}</a
+            >
+          </li>
+          <li class="nav__item" (click)="signinService.close()">
+            <a
+              routerLink="/hotels"
+              class="nav__link"
+              routerLinkActive="active"
+              (click)="isMobile = false"
+              ><i class="icon-king_bed_black_24dp nav__icon"></i
+              >{{ "HEADER.HOTELS" | translate }}</a
+            >
+          </li>
+          <li class="nav__item" (click)="signinService.close()">
+            <a
+              routerLink="/contact"
+              class="nav__link"
+              routerLinkActive="active"
+              (click)="isMobile = false"
+              ><i class="icon-call_black_24dp nav__icon"></i
+              >{{ "HEADER.CONTACT" | translate }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-web flex items-center justify-between">
+      <nav class="nav">
+        <ul class="nav__list flex">
+          <li class="nav__item" (click)="signinService.close()">
+            <a routerLink="/home" class="nav__link" routerLinkActive="active"
+              ><i class="icon-home_black_24dp nav__icon"></i
+              >{{ "HEADER.HOME" | translate }}</a
+            >
+          </li>
+          <li class="nav__item" (click)="signinService.close()">
+            <a routerLink="/hotels" class="nav__link" routerLinkActive="active"
+              ><i class="icon-king_bed_black_24dp nav__icon"></i
+              >{{ "HEADER.HOTELS" | translate }}</a
+            >
+          </li>
+          <li class="nav__item" (click)="signinService.close()">
+            <a routerLink="/contact" class="nav__link" routerLinkActive="active"
+              ><i class="icon-call_black_24dp nav__icon"></i
+              >{{ "HEADER.CONTACT" | translate }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <ng-container *ngIf="!storageService.isLogged()">
+        <div class="cta flex flex-col">
+          <button
+            (click)="signinService.open()"
+            class="btn btn-secondary-tint btn-sm"
+          >
+            {{ "HEADER.SIGNIN" | translate }}
+          </button>
+          <button routerLink="/signup" class="btn btn-primary btn-sm">
+            {{ "HEADER.SIGNUP" | translate }}
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="storageService.isLogged()">
+        <div class="cta flex items-center justify-end">
+          <img src="assets/imgs/user.svg" alt="logo" />
+        </div>
+      </ng-container>
+    </div>
+
+    <div *ngIf="!isMobile" class="header__toggle" (click)="onToggle()">
+      <img
+        src="assets/icons/icones/align-left.svg"
+        alt="toggle"
+        class="header__toggle--btn"
+      />
+    </div>
+    <div
+      *ngIf="returnHeader"
+      class="header__return"
+      (click)="signinService.close()"
+      routerLink="{{ this.return }}"
+    >
+      <img
+        src="assets/icons/icones/chevron-down.svg"
+        alt="return"
+        class="header__return--btn"
+      />
+    </div>
+  </div>
+</header>
+
+<div class="pages__popup" *ngIf="signinService.isOpen || isForgot">
+  <div class="pages__overlay">
+    <app-signin
+      *ngIf="signinService.isOpen"
+      (closeSignin)="signinService.close()"
+      (openForgotEvent)="isForgot = true; signinService.close()"
+    ></app-signin>
+    <app-forgot-password
+      *ngIf="isForgot"
+      (closeForgot)="isForgot = false"
+    ></app-forgot-password>
+  </div>
+  <div
+    *ngIf="signinService.isOpen || isForgot"
+    (click)="signinService.close(); isForgot = false"
+    class="pages__bg"
+  ></div>
+</div>

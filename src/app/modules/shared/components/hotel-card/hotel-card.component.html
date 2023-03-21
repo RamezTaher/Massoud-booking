@@ -1,0 +1,46 @@
+<div class="hotel__item">
+  <div class="hotel__imgbox">
+    <img [src]="data.DefaultPicture" class="hotel__img" alt="hotel img" />
+    <div class="hotel__card-love">
+      <i class="icon-favorite_black_24dp"></i>
+    </div>
+  </div>
+
+  <div class="hotel__details">
+    <div class="hotel__details-container flex">
+      <div class="hotel__body">
+        <h2 class="hotel-item-name">{{ data?.NameAr }}</h2>
+        <app-box-stars [count]="data?.Stars"></app-box-stars>
+        <div class="hotel__location flex items-center">
+          <h3 class="hotel-item-location">
+            {{ data?.AdressAr ?? data?.Adress }}
+          </h3>
+        </div>
+        <div class="hotel__services flex items-center">
+          <i class="icon-wifi_black_24dp"></i>
+          <i class="icon-shower_black_24dp"></i>
+          <i class="icon-room_service_black_24dp"></i>
+          <i class="icon-local_parking_black_24dp"></i>
+          <i class="icon-ac_unit_black_24dp"></i>
+        </div>
+      </div>
+
+      <div class="hotel__footer flex justify-between items-center">
+        <div class="hotel__footer--details">
+          <h3 class="hotel__price hotel-item-price">
+            {{ getLowestPrice(data?.BookableRooms) }} ريال
+          </h3>
+          <h3 class="hotel__period hotel-item-period">
+            لمدة {{ getNights(data?.BookableRooms) }} ليالٍ
+          </h3>
+          <h3 class="hotel__period hotel-item-type-date">
+            {{ "COMMON.WITH_TAXES" | translate }}
+          </h3>
+        </div>
+        <button (click)="navigateToDetails()" class="btn btn-primary btn-sm">
+          {{ "SEARCH.BOOK" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

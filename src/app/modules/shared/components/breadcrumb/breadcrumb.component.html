@@ -1,0 +1,15 @@
+<nav class="breadcrumb">
+  <div class="main-container">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item" routerLink="/home">
+        {{ "HEADER.HOME" | translate }}
+      </li>
+      <li class="breadcrumb-item" routerLink="/search">
+        {{ storageService.searchObj.direction?.text }}
+      </li>
+      <li class="breadcrumb-item active">
+        {{ storageService.searchObj.hotelName }}
+      </li>
+    </ol>
+  </div>
+</nav>

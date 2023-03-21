@@ -1,0 +1,7 @@
+<svg id="Group_211" data-name="Group 211" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Ellipse_1" data-name="Ellipse 1" fill="#f3faf9" stroke="#17a288" stroke-width="1">
+    <circle cx="24" cy="24" r="24" stroke="none"/>
+    <circle cx="24" cy="24" r="23.5" fill="none"/>
+  </g>
+  <path id="Intersection_1" data-name="Intersection 1" d="M17.828,0A23.739,23.739,0,0,0,0,8.058C3.323,12.278,12.665,14.4,17.828,14.4s14.506-2.123,17.829-6.343A23.74,23.74,0,0,0,17.828,0ZM8.307,28.8a9.521,9.521,0,1,0,9.521-9.6A9.558,9.558,0,0,0,8.307,28.8Z" transform="translate(41.829 48) rotate(180)" fill="#17a288"/>
+</svg>

@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="main-container flex flex-col">
+    <div class="footer__logobox u-margin-bottom-30">
+      <img src="assets/imgs/logo.png" alt="logo" class="logo" />
+    </div>
+    <div class="footer__list u-margin-bottom-30">
+      <div class="footer__services flex justify-between">
+        <div class="right">
+          <div class="footer__item">{{ "FOOTER.ABOUT" | translate }}</div>
+          <div class="footer__item">{{ "FOOTER.RULES" | translate }}</div>
+          <div class="footer__item">{{ "FOOTER.BLOG" | translate }}</div>
+        </div>
+        <div class="left">
+          <div class="footer__item">{{ "FOOTER.SERVICE" | translate }}</div>
+          <div class="footer__item">{{ "FOOTER.PRIVACY" | translate }}</div>
+          <div class="footer__item" routerLink="/contact">
+            {{ "FOOTER.CONTACT" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__social-media flex flex-row">
+        <img
+          src="assets/icons/icones/Group 2383.svg"
+          alt="facebook"
+          class="social-logo"
+        />
+
+        <img
+          src="assets/icons/icones/Group 2381.svg"
+          alt="twitter"
+          class="social-logo"
+        />
+        <img
+          src="assets/icons/icones/Group 2382.svg"
+          alt="instagram"
+          class="social-logo"
+        />
+
+        <img
+          src="assets/icons/icones/Group 2380.svg"
+          alt="youtube"
+          class="social-logo"
+        />
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      المسعود © {{ date.getFullYear() }}. كل الحقوق محفوظة
+    </div>
+  </div>
+</footer>

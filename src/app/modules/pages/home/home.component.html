@@ -1,0 +1,85 @@
+<div class="home main-container">
+  <div class="home__choice">
+    <app-choice-card (search)="goToSearch($event)"></app-choice-card>
+  </div>
+
+  <!-- LANDING PAGE -->
+  <div class="choose flex flex-col">
+    <h1 class="home-big-heading">
+      <span class="primary">{{ "HOME.BODY.TITLE.HIGHLIGHT" | translate }} </span
+      >{{ "HOME.BODY.TITLE.NORMAL" | translate }}
+    </h1>
+    <img src="assets/imgs/home.png" alt="" class="home-image" />
+  </div>
+
+  <!-- CAROUSAL -->
+
+  <div class="carousal-container flex flex-col">
+    <div class="carousal-header flex items-center justify-between">
+      <h2 class="home-main-heading">
+        {{ "HOME.BODY.CAROUSAL.TITLE" | translate }}
+      </h2>
+    </div>
+    <div *ngIf="(httpService.state$ | async)?.loading" class="carousal">
+      <app-card-loader></app-card-loader>
+    </div>
+    <div *ngIf="!(httpService.state$ | async)?.loading" class="carousal">
+      <div
+        class="carousal-item pointer"
+        *ngFor="let item of (httpService.state$ | async)?.data"
+      >
+        <app-hotel-item
+          [hotel]="item"
+          (click)="goToDetails(item)"
+        ></app-hotel-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mail main-container">
+  <div class="mail__card">
+    <div class="mail__details flex items-center">
+      <img
+        src="assets/icons/icones/Group 23.svg"
+        alt="fire"
+        class="mail__details--img"
+      />
+      <div class="mail__details--text">
+        <h2 class="home-heading-3">
+          {{ "HOME.BODY.MAIL.TITLE" | translate }}
+        </h2>
+        <h2 class="home-heading-4">
+          {{ "HOME.BODY.MAIL.UNDERTITLE" | translate }}
+        </h2>
+      </div>
+    </div>
+
+    <form class="form">
+      <div class="form-control">
+        <label class="primary-input-label" for="text">
+          {{ "INPUTS.MAIL" | translate }}
+        </label>
+        <img
+          class="primary-input-img"
+          src="assets/icons/icones/mail.svg"
+          alt="input-img"
+        />
+        <div class="input-container flex flex-col">
+          <input
+            class="primary-input"
+            type="email"
+            name="email"
+            placeholder="{{ 'HOME.BODY.MAIL.PLACEHOLDER' | translate }}"
+          />
+          <button
+            (click)="onSubscribeToNewLetter()"
+            class="btn btn-primary btn-md mail__btn"
+          >
+            {{ "HOME.BODY.MAIL.REGISTER" | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

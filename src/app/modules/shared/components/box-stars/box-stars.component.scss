@@ -1,0 +1,24 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+:host {
+  .hotel {
+    &__stars {
+      column-gap: 5px;
+
+      @include respond(xl) {
+        column-gap: 3px;
+      }
+    }
+
+    &__star {
+      font-size: 16px;
+      color: $color-dark-shade;
+      &.active {
+        color: $color-warning;
+      }
+      @include respond(xl) {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="hotel__item flex flex-col">
+  <div class="hotel__img-box">
+    <img
+      class="hotel__img"
+      [src]="
+        hotel.DefaultPicture != null
+          ? hotel?.DefaultPicture
+          : 'assets/icons/icones/hotel.jpg'
+      "
+    />
+  </div>
+
+  <div class="hotel__details flex flex-col">
+    <h2 class="hotel-item-name">{{ hotel?.NameAr ?? hotel?.Name }}</h2>
+    <app-box-stars [count]="hotel?.Stars"></app-box-stars>
+    <div class="hotel__location flex items-center">
+      <i class="icon-map-pin hotel-item-location"></i>
+      <h3 class="hotel-item-location">
+        {{ hotel.AdressAr ?? hotel.Adress }}
+      </h3>
+    </div>
+  </div>
+</div>

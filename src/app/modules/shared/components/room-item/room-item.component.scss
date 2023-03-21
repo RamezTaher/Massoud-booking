@@ -1,0 +1,194 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+.room {
+  &__details {
+    &--item {
+      padding: 13rem 1.5rem 1.5rem;
+      background-color: $color-secondary-tint;
+      margin-top: 1.5rem;
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+      @include shadow-2;
+      @include respond(desktop) {
+        display: flex;
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+      }
+    }
+  }
+  &__info {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-dark-shade;
+
+    @include respond(desktop) {
+      padding: 0;
+      flex: 2;
+      border-left: 1px solid $color-dark-shade;
+      border-right: 1px solid $color-dark-shade;
+    }
+
+    &--cell {
+      @include respond(desktop) {
+        padding: 1.6rem;
+      }
+    }
+
+    &--img > img {
+      height: 13rem;
+      width: 100%;
+      object-fit: fill;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include respond(desktop) {
+        position: static;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+  &__options-price {
+    @include respond(desktop) {
+      flex: 5;
+    }
+    &--item {
+      &.only_one_room {
+        height: 100% !important;
+      }
+      padding: 1rem 0;
+      border-bottom: 1px solid $color-dark-shade;
+      @include respond(desktop) {
+        display: flex;
+
+        padding: 0;
+        border-bottom: 0;
+      }
+
+      &:last-child {
+        padding: 1rem 0 0;
+        border-bottom: 0;
+        @include respond(desktop) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &__options {
+    @include respond(desktop) {
+      flex: 3;
+      border-left: 1px solid $color-dark-shade;
+    }
+
+    &:not(:last-child) {
+      @include respond(desktop) {
+        border-bottom: 1px solid $color-dark-shade;
+      }
+    }
+
+    &--cell {
+      @include respond(desktop) {
+        padding: 1.6rem;
+      }
+    }
+    &--list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      @include respond(desktop) {
+        row-gap: 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+      & > li {
+        display: flex;
+        align-items: center;
+        column-gap: 0.7rem;
+
+        & > i {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &__price {
+    padding-top: 1rem;
+    @include respond(desktop) {
+      flex: 2;
+      border-bottom: 1px solid $color-dark-shade;
+      border-left: 1px solid $color-dark-shade;
+      padding-top: 0;
+    }
+
+    &--cell {
+      display: flex;
+      justify-content: space-between;
+      @include respond(desktop) {
+        flex-direction: column;
+      }
+    }
+
+    &--details {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+
+      @include respond(desktop) {
+        padding: 1.6rem;
+      }
+    }
+
+    &--type {
+      display: none;
+      @include respond(desktop) {
+        display: block;
+      }
+    }
+
+    &--cta {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 0.5rem;
+      padding: 0 1.6rem 1.6rem;
+
+      @include respond(desktop) {
+        width: 100%;
+      }
+
+      &-1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        column-gap: 0.8rem;
+      }
+
+      &-box {
+        height: 4.2rem;
+        width: 4.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.8rem;
+        font-size: 2.6rem;
+        background-color: $color-primary;
+        color: $color-secondary-tint;
+        &.show {
+          color: $color-primary;
+          background-color: $color-primary-tint;
+          border: 0.7px solid $color-primary;
+          font-size: $font-size-16;
+          height: 4.2rem;
+          width: 5.2rem;
+        }
+      }
+    }
+  }
+}

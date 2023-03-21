@@ -1,0 +1,28 @@
+<div
+  #daterangepicker="bsDaterangepicker"
+  bsDaterangepicker
+  [minDate]="today"
+  [bsConfig]="bsConfig"
+  [bsValue]="rangeDate"
+  (bsValueChange)="onValueChange($event)"
+  class="date-picker pointer"
+>
+  <div class="flex flex-col">
+    <div class="flex justify-between items-center">
+      <h3 class="arrival picker-1">
+        <i class="icon-calendar"></i>
+        <div>{{ "HOME.HEAD.DATEARRQ" | translate }}</div>
+      </h3>
+      <h3 class="departure picker-1">
+        <div>{{ "HOME.HEAD.DATADEPARTQ" | translate }}</div>
+        <i class="icon-calendar"></i>
+      </h3>
+      <div class="arrival"></div>
+    </div>
+    <div class="dates">
+      <div class="picker-2">{{ rangeDate[0] | date: "longDate" }}</div>
+      <img src="assets/icons/icones/arrow-left.svg" alt="" />
+      <div class="picker-2">{{ rangeDate[1] | date: "longDate" }}</div>
+    </div>
+  </div>
+</div>

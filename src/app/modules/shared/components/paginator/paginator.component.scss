@@ -1,0 +1,75 @@
+@import "utilities/variables";
+:host {
+  .pagination {
+    width: 230px;
+    margin: 0 auto;
+
+    &--nextbox {
+      margin-left: 10px;
+    }
+
+    &--prevbox {
+      margin-right: 10px;
+      transform: rotate(180deg);
+    }
+
+    &--prevbox,
+    &--nextbox {
+      background-color: $color-primary;
+      color: $color-secondary-tint;
+
+      &.disabled {
+        background-color: #e7e9ec;
+        display: none;
+        i {
+          color: $color-secondary-tint;
+        }
+      }
+    }
+
+    &-first {
+      color: $color-dark !important;
+    }
+
+    &-pages {
+      display: flex;
+      gap: 1px;
+
+      justify-content: center;
+      align-items: center;
+
+      &-item {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        color: $color-dark;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 12px;
+        background-color: $color-primary-tint;
+
+        &.active {
+          color: $color-primary;
+        }
+      }
+    }
+
+    .box {
+      border: 0;
+      outline: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #e7e9ec;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}

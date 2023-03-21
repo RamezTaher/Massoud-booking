@@ -1,0 +1,78 @@
+<div class="room__details--item">
+  <div class="room__info">
+    <div class="room__info--cell">
+      <div class="room__info--img">
+        <img [src]="picture ?? 'assets/icon/icones/hotel.jpg'" alt="" />
+      </div>
+      <h4 class="room__info--type hotel-item-room-type">
+        {{ room.RoomTypeNameAr ?? room.RoomTypeName }}
+      </h4>
+    </div>
+  </div>
+  <div class="room__options-price">
+    <div
+      [ngClass]="{ only_one_room: room.Data.length === 1 }"
+      class="room__options-price--item"
+      *ngFor="let choice of room.Data"
+    >
+      <div class="room__options">
+        <div class="room__options--cell">
+          <ul class="room__options--list">
+            <li class="room__options--item hotel-item-room-service">
+              <i class="icon-bed"></i> {{ choice.MealAr ?? choice.Meal }}
+            </li>
+            <li class="room__options--item hotel-item-room-service">
+              <i class="icon-balcony"></i
+              >{{ choice.ViewNameAr ?? choice.ViewName }}
+            </li>
+          </ul>
+          <h5 class="room__options--date hotel-item-type-date">
+            من {{ choice.CheckIn | date }} الى {{ choice.CheckOut | date }}
+          </h5>
+        </div>
+      </div>
+      <div class="room__price">
+        <div class="room__price--cell">
+          <div class="room__price--details">
+            <div class="room__price--num hotel-item-price">
+              {{ choice.PriceToPay }} ريال
+            </div>
+            <div class="room__price--period hotel-item-period">
+              لمدة {{ choice.NbrNights }} ليالٍ
+            </div>
+            <div class="room__price--type hotel-item-type-date">
+              {{ "COMMON.WITH_TAXES" | translate }}
+            </div>
+          </div>
+          <div class="room__price--cta">
+            <div
+              *ngIf="choice.selected && choice.Quantity > 0"
+              class="room__price--cta-1"
+            >
+              <button
+                class="btn btn-dark btn-bold btn-almarai room__price--cta-box"
+                (click)="inc(choice)"
+              >
+                +
+              </button>
+              <div class="room__price--cta-box show">{{ choice.Quantity }}</div>
+              <button
+                class="room__price--cta-box btn btn-dark btn-bold btn-almarai"
+                (click)="dec(choice)"
+              >
+                -
+              </button>
+            </div>
+            <button
+              *ngIf="!choice.selected || choice.Quantity == 0"
+              (click)="selectChoice(choice)"
+              class="btn btn-primary btn-md"
+            >
+              {{ "ROOM.BOOK" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

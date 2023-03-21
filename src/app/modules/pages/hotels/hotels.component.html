@@ -1,0 +1,27 @@
+<div class="hotels">
+  <div class="main-container">
+    <div class="hotels__container">
+      <div
+        *ngIf="(hotelsService.state$ | async)?.loading"
+        class="hotels__container-box flex flex-col"
+      >
+        <app-card-loader></app-card-loader>
+      </div>
+      <div
+        *ngIf="!(hotelsService.state$ | async)?.loading"
+        class="hotels__container-box"
+      >
+        <app-hotel-item
+          [hotel]="item"
+          (click)="goToDetails(item)"
+          *ngFor="let item of (hotelsService.state$ | async)?.data?.Data"
+        ></app-hotel-item>
+      </div>
+      <app-paginator
+        [pageCount]="(hotelsService.state$ | async)?.data?.TotalCount"
+        [currentPage]="currentPage"
+        (searchPage)="goToPage($event)"
+      ></app-paginator>
+    </div>
+  </div>
+</div>

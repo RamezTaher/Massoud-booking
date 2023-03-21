@@ -1,0 +1,292 @@
+<div class="signup">
+  <div class="main-container">
+    <div class="signup__container">
+      <div class="signup__header flex items-center justify-between">
+        <h2 class="signup__auth--header auth-heading-primary">
+          {{ "AUTH.SIGNUP.REGISTER" | translate }}
+        </h2>
+      </div>
+      <div class="signup__content">
+        <div class="signup__form">
+          <form [formGroup]="user_form" (ngSubmit)="signup()">
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="email">
+                  {{ "INPUTS.FIRSTNAME" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/user (1).svg"
+                  alt="input-img"
+                />
+                <input
+                  class="primary-input"
+                  type="text"
+                  required
+                  placeholder="{{ 'INPUTS.FIRSTNAME' | translate }}"
+                  formControlName="FirstName"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['FirstName'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+            </div>
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="email">
+                  {{ "INPUTS.LASTNAME" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/user (1).svg"
+                  alt="input-img"
+                />
+                <input
+                  class="primary-input"
+                  type="email"
+                  required
+                  placeholder="{{ 'INPUTS.LASTNAME' | translate }}"
+                  formControlName="LastName"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['LastName'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+            </div>
+
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="email">
+                  {{ "INPUTS.MAIL" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/mail.svg"
+                  alt="input-img"
+                />
+                <input
+                  class="primary-input"
+                  type="email"
+                  required
+                  placeholder="{{ 'INPUTS.MAIL' | translate }}"
+                  formControlName="Email"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted && user_form.controls['Email'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['Email'].invalid &&
+                  !user_form.controls['Email'].hasError('required')
+                "
+              >
+                {{ "Validation.Pattern" | translate }}
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="emailsExists || usernameExists"
+              >
+                {{ "Validation.UsedEmail" | translate }}
+              </div>
+            </div>
+
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="phone">
+                  {{ "INPUTS.PHONE" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/mail.svg"
+                  alt="input-img"
+                />
+                <input
+                  class="primary-input"
+                  type="text"
+                  required
+                  placeholder="{{ 'INPUTS.PHONE' | translate }}"
+                  formControlName="Phone"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted && user_form.controls['Phone'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['Phone'].invalid &&
+                  !user_form.controls['Phone'].hasError('required')
+                "
+              >
+                {{ "Validation.Pattern" | translate }}
+              </div>
+              <div class="app-messages error" *ngIf="phoneExists">
+                {{ "Validation.UsedPhone" | translate }}
+              </div>
+            </div>
+
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="password">
+                  {{ "INPUTS.PASS" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/lock.svg"
+                  alt="input-img"
+                />
+
+                <img
+                  src="assets/icons/icones/eye-off.svg"
+                  alt="Show"
+                  class="primary-input-img-2"
+                />
+                <input
+                  class="primary-input"
+                  type="password"
+                  required
+                  placeholder="{{ 'INPUTS.PASS' | translate }}"
+                  formControlName="Password"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['Password'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+            </div>
+
+            <div>
+              <div class="form-control">
+                <label class="primary-input-label" for="password">
+                  {{ "INPUTS.REPASS" | translate }}</label
+                >
+                <img
+                  class="primary-input-img"
+                  src="assets/icons/icones/lock.svg"
+                  alt="input-img"
+                />
+
+                <img
+                  src="assets/icons/icones/eye-off.svg"
+                  alt="Show"
+                  class="primary-input-img-2"
+                />
+                <input
+                  class="primary-input"
+                  type="password"
+                  required
+                  placeholder="{{ 'INPUTS.PASS' | translate }}"
+                  formControlName="Password"
+                />
+              </div>
+              <div
+                class="app-messages error"
+                *ngIf="
+                  submitted &&
+                  user_form.controls['Password'].hasError('required')
+                "
+              >
+                {{ "Validation.Required" | translate }}
+              </div>
+            </div>
+            <button type="submit" class="signup__btn btn btn-primary btn-sm">
+              {{ "AUTH.SIGNIN.TITLE" | translate }}
+            </button>
+          </form>
+
+          <h2 class="auth-small-text">
+            {{ "AUTH.SIGNUP.ALREADY" | translate }}
+            <a
+              (click)="signinService.open()"
+              class="auth-heading-secondary primary pointer"
+            >
+              {{ "AUTH.SIGNIN.TITLE" | translate }}</a
+            >
+          </h2>
+        </div>
+
+        <h3 class="signup__other auth-heading-tritiary">
+          <span>{{ "AUTH.SIGNIN.OR" | translate }}</span>
+        </h3>
+
+        <div class="wrapper signup__onlyweb">
+          <div class="line"></div>
+          <div class="wordwrapper">
+            <div class="word">{{ "AUTH.SIGNUP.OR1" | translate }}</div>
+          </div>
+        </div>
+
+        <div class="signup__social-media flex flex-col">
+          <h2 class="signup__onlyweb auth-big-text">
+            {{ "AUTH.SIGNUP.OR2" | translate }}
+          </h2>
+          <div class="signup__social-media--item">
+            <a class="btn btn-secondary-tint-border btn-sm">
+              Google
+              <img
+                src="assets/icons/icones/7123025_logo_google_g_icon.svg"
+                alt="Google"
+                class="signup__social-media--icon"
+            /></a>
+          </div>
+
+          <div
+            class="signup__social-media--item flex items-center justify-between"
+          >
+            <a class="btn btn-secondary-tint-border btn-sm"
+              >Facebook<img
+                src="assets/icons/icones/5296499_fb_facebook_facebook logo_icon.svg"
+                alt="Facebook"
+                class="signup__social-media--icon"
+            /></a>
+            <a class="btn btn-secondary-tint-border btn-sm"
+              >Appel<img
+                src="assets/icons/icones/104490_apple_icon.svg"
+                alt="Appel"
+                class="signup__social-media--icon"
+            /></a>
+          </div>
+          <div class="signup__footer">
+            <p class="auth-normal-text">
+              {{ "AUTH.SIGNIN.FOOTER1" | translate }}
+              <span class="blue">
+                {{ "AUTH.SIGNIN.HIGHLIGHT" | translate }}</span
+              >{{ "AUTH.SIGNIN.FOOTER2" | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

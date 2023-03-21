@@ -1,0 +1,128 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+:host {
+  .paiement {
+    background-color: $color-secondary;
+    padding: 12rem 0 10rem;
+
+    &__container {
+      row-gap: 1.6rem;
+      @include respond(desktop) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    &__bank {
+      padding: 1.6rem;
+      background-color: $color-secondary-tint;
+      border-radius: 2rem;
+      @include shadow-2;
+      @include respond(desktop) {
+        width: 68%;
+      }
+
+      h4 {
+        margin-bottom: 0.6rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__form {
+      row-gap: 1.6rem;
+      margin-bottom: 3rem;
+
+      .form-control {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+      }
+    }
+
+    &__cta {
+      row-gap: 1rem;
+      @include respond(desktop) {
+        flex-direction: row-reverse;
+        column-gap: 20rem;
+      }
+    }
+
+    &__done {
+      display: none;
+      &.show {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100000;
+      }
+
+      &--bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color-dark, 0.7);
+      }
+
+      &--card {
+        background-color: $color-secondary-tint;
+        padding: 3.6rem 1.6rem 1.6rem;
+        border-radius: 2rem;
+        position: relative;
+        margin-top: 50%;
+        @include respond(desktop) {
+          padding: 2rem;
+          margin: 10% auto;
+          width: 40rem;
+          height: 30rem;
+        }
+      }
+      &--close-img {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+      }
+
+      &--check {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      &--text {
+        text-align: center;
+        margin-bottom: 3.1rem;
+      }
+    }
+  }
+
+  .booking {
+    &__info {
+      background-color: $color-secondary-tint;
+      border-radius: 2rem;
+      padding: 1.6rem 1.6rem 2.4rem;
+      @include shadow-2;
+      @include respond(desktop) {
+        width: 30%;
+      }
+    }
+    &__price {
+      row-gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid $color-secondary-shade;
+    }
+  }
+}

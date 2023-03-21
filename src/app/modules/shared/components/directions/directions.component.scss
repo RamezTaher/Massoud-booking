@@ -1,0 +1,57 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+:host {
+  .directions {
+    &__header {
+      padding: 2.1rem 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid $color-secondary-shade;
+      .main-container {
+        position: relative;
+      }
+
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+
+    &__closeBtn {
+      position: absolute;
+      left: 3.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__content {
+      row-gap: 1rem;
+      padding: 0 3.7rem;
+      background-color: $color-secondary-tint;
+      @include respond(desktop) {
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        @include shadow-2;
+      }
+    }
+
+    &__item {
+      padding-bottom: 1rem;
+
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      cursor: pointer;
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-secondary-shade;
+      }
+    }
+
+    &__icon {
+      color: $color-dark-shade;
+
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+  }
+}

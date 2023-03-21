@@ -1,0 +1,78 @@
+<div class="choice__change" [ngClass]="{ 'in-search': isSearch }">
+  <div class="choice__card-container">
+    <div class="choice__card flex flex-col">
+      <!-- Directions Only in Home  -->
+      <div
+        class="choice__directions pointer"
+        [ngClass]="{ 'directions-open': isDirectionsOpen }"
+        *ngIf="isDirectionsAvailable"
+      >
+        <div (click)="directionToggle()">
+          <h3 class="picker-1">
+            <i class="icon-map-pin home__icon primary"></i>
+            {{ "HOME.HEAD.DIRECTION" | translate }}
+          </h3>
+
+          <div class="direction-list">
+            <div class="flex items-center justify-between">
+              <h2 class="picker-2">
+                {{
+                  currentDirection
+                    ? currentDirection?.text
+                    : ("SEARCH.CHOISE_DIRECTION" | translate)
+                }}
+              </h2>
+              <div
+                class="chevron hidden"
+                [ngClass]="{ 'directions-open': isDirectionsOpen }"
+              >
+                <img src="assets/icons/icones/chevron-down.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="isDirectionsOpen" class="mobile">
+          <app-directions
+            (onChange)="changeDirection($event)"
+            [value]="queries?.city"
+          ></app-directions>
+        </div>
+        <div *ngIf="isDirectionsOpen" class="desktop">
+          <app-directions
+            (onChange)="changeDirection($event)"
+            [value]="queries?.city"
+          ></app-directions>
+        </div>
+      </div>
+
+      <!-- DatePicker  -->
+      <app-date-picker
+        [checkIn]="queries?.checkin"
+        [checkOut]="queries?.checkout"
+        (onChange)="changeDates($event)"
+      ></app-date-picker>
+
+      <!-- Promo Code  -->
+      <div class="choice__code">
+        <h3 class="picker-1">
+          {{ "HOME.HEAD.PROMOCODEQ" | translate }}
+          <i class="icon-Group-12 primary"></i>
+        </h3>
+        <input
+          [(ngModel)]="currentPromocode"
+          type="text"
+          class="picker-2"
+          placeholder="{{ 'HOME.HEAD.PROMOCODE' | translate }}"
+        />
+      </div>
+
+      <!-- Button  -->
+      <div class="choice__cta">
+        <button class="btn btn-primary btn-lg" (click)="onSearch()">
+          {{ "HOME.HEAD.SEARCH" | translate }} <i class="icon-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

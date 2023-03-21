@@ -1,0 +1,154 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+:host {
+  .signup {
+    padding-top: 8.3rem;
+    &__container {
+      padding-top: 3rem;
+      @include respond(desktop) {
+        padding: 3rem 9rem;
+      }
+    }
+
+    &__container {
+      @include respond(desktop) {
+      }
+    }
+
+    &__content {
+      @include respond(desktop) {
+        display: flex;
+      }
+    }
+
+    &__close {
+      cursor: pointer;
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+
+    &__header {
+      margin-bottom: 5rem;
+      @include respond(desktop) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &__form {
+      margin-bottom: 3rem;
+      @include respond(desktop) {
+        flex: 2;
+        margin-bottom: 0;
+      }
+      form {
+        :not(:last-child) {
+          margin-bottom: 3rem;
+          @include respond(desktop) {
+            margin-bottom: 2rem;
+          }
+        }
+        margin-bottom: 1.5rem;
+        @include respond(desktop) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    &__under-form {
+      margin-bottom: 1.5rem;
+      @include respond(desktop) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &__other {
+      text-align: center;
+      border-bottom: 1px solid $color-dark-shade;
+      line-height: 0.1em;
+      margin-bottom: 3rem;
+
+      & span {
+        background: $color-secondary-tint;
+        padding: 0 10px;
+      }
+
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+
+    .wrapper {
+      position: relative;
+      width: 2.5rem;
+      height: auto;
+      margin: 0 6rem;
+      .line {
+        position: absolute;
+        left: 49%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: $color-secondary-shade;
+        z-index: 1;
+      }
+      .wordwrapper {
+        text-align: center;
+        height: 12px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -12px;
+        z-index: 2;
+      }
+      .word {
+        padding: 1.5rem 0;
+        background: $color-secondary-tint;
+      }
+    }
+
+    &__social-media {
+      row-gap: 1rem;
+      @include respond(desktop) {
+        margin-bottom: 1rem;
+        row-gap: 1.6rem;
+        flex: 2;
+      }
+
+      .auth-big-text {
+        margin-bottom: 3.5rem;
+      }
+
+      &--item {
+        column-gap: 1rem;
+      }
+
+      &--icon {
+        margin-right: 0.7rem;
+      }
+    }
+
+    &__footer {
+      margin-top: 5rem;
+      text-align: center;
+      padding-bottom: 50px;
+
+      @include respond(desktop) {
+        margin-top: 1.5rem;
+      }
+
+      p {
+        max-width: 25rem;
+        margin: 0 auto;
+      }
+    }
+
+    &__onlyweb {
+      display: none;
+      @include respond(desktop) {
+        display: block;
+      }
+    }
+  }
+}
